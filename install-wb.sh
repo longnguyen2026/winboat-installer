@@ -89,7 +89,8 @@ check_net(){
 
 step "Checking Internet..."
 
-if ping -c1 github.com >/dev/null 2>&1
+# if ping -c1 github.com >/dev/null 2>&1
+if ping -c1 google.com >/dev/null 2>&1
 then
     ok "Internet OK"
 else
@@ -181,7 +182,11 @@ step "Downloading WinBoat..."
 cd /tmp
 
 # wget -O WinBoat.deb "$WB_URL"
-curl -L "$WB_URL" -o WinBoat.deb
+curl -L "$WB_URL" -o /tmp/winboat_latest.deb
+if ! dpkg-deb --info /tmp/winboat_latest.deb >/dev/null 2>&1
+then
+    fail "Downloaded file is not a valid Debian package."
+fi
 
 ok "Download completed"
 
@@ -195,11 +200,12 @@ install_winboat(){
 
 step "Installing WinBoat..."
 
-sudo apt install -y ./WinBoat.deb
-
-rm -f WinBoat.deb
+#sudo apt install -y ./WinBoat.deb
+sudo apt install -y /tmp/winboat_latest.deb
+rm -f /tmp/winboat_latest.deb
 
 ok "WinBoat Installed"
+
 
 }
 
