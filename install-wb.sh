@@ -21,7 +21,8 @@ RESET='\033[0m'
 # ==========================
 
 # Thay bằng link Release của bạn
-WB_URL="https://github.com/longnguyen2026/winboat/releases/latest/download/WinBoat.deb"
+# WB_URL="https://github.com/longnguyen2026/winboat/releases/latest/download/WinBoat.deb"
+WB_URL="https://drive.google.com/uc?export=download&id=1PMWAl_4fVMu5Q3FoOlNT1-moNzSYfVcs"
 
 # ==========================
 # UI
@@ -179,7 +180,8 @@ step "Downloading WinBoat..."
 
 cd /tmp
 
-wget -O WinBoat.deb "$WB_URL"
+# wget -O WinBoat.deb "$WB_URL"
+curl -L "$WB_URL" -o WinBoat.deb
 
 ok "Download completed"
 
