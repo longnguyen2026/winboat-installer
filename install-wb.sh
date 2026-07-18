@@ -22,7 +22,7 @@ RESET='\033[0m'
 
 # Thay bằng link Release của bạn
 # WB_URL="https://github.com/longnguyen2026/winboat/releases/latest/download/WinBoat.deb"
-WB_URL="https://drive.google.com/uc?export=download&id=1PMWAl_4fVMu5Q3FoOlNT1-moNzSYfVcs"
+WB_URL="https://github.com/longnguyen2026/winboat-installer/releases/latest/download/wb.deb"
 
 # ==========================
 # UI
